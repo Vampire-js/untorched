@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjpq2em1tl687"]
+
+[ext_resource type="Texture2D" uid="uid://db77dvnpd3lyv" path="res://assets/Walls/edge.png" id="1_w4hp8"]
+
+[node name="WallEdge" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-30, 52, 42, 52, 42, -39, 49, -39, 49, -61, 1, -61, 1, -39, 7, -39, 7, 17, -30, 19, -30, 13, -52, 13, -51, 60, -31, 60)
+
+[node name="Edge" type="Sprite2D" parent="."]
+position = Vector2(0, 1.5)
+scale = Vector2(1, 1.05833)
+texture = ExtResource("1_w4hp8")

@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cq25b52bpxqto"]
+
+[ext_resource type="Texture2D" uid="uid://cjhsykncedjoc" path="res://assets/Players/pxArt (7).png" id="1_1qi5j"]
+[ext_resource type="Script" path="res://scenes/Components/enemy.gd" id="1_sbxnj"]
+[ext_resource type="Texture2D" uid="uid://nn0pvmoh8ndg" path="res://assets/General Assets/Light_texture (1).png" id="2_4dgss"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tcsv7"]
+radius = 52.0096
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_akbjy"]
+radius = 350.036
+
+[node name="Enemy" type="CharacterBody2D"]
+wall_min_slide_angle = 0.0
+script = ExtResource("1_sbxnj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tcsv7")
+
+[node name="PxArt(7)" type="Sprite2D" parent="."]
+texture = ExtResource("1_1qi5j")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 11.53
+texture = ExtResource("2_4dgss")
+texture_scale = 2.6
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+position = Vector2(-2, 1)
+shape = SubResource("CircleShape2D_akbjy")
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwh52x7v0lxgp"]
+
+[ext_resource type="Script" path="res://scenes/Components/scripts/player.gd" id="1_1s717"]
+[ext_resource type="Texture2D" uid="uid://b2t7g7j0r2wqt" path="res://assets/Players/HeroMech.png" id="1_rdh6h"]
+[ext_resource type="Texture2D" uid="uid://4s16au4aa2rb" path="res://assets/General Assets/Light_texture.png" id="3_6qo8d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mmvxk"]
+radius = 50.636
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_1s717")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mmvxk")
+
+[node name="HeroMech" type="Sprite2D" parent="."]
+position = Vector2(13, -5)
+texture = ExtResource("1_rdh6h")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 4.6
+texture = ExtResource("3_6qo8d")
+texture_scale = 2.35
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.165, 1.165)

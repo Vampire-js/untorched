@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwiae3gf5gqhl"]
+
+[ext_resource type="Texture2D" uid="uid://drg3ak330ew85" path="res://assets/Main Menu/Menu (1).png" id="1_cmtfv"]
+[ext_resource type="Script" path="res://scenes/Start.gd" id="2_26q0r"]
+[ext_resource type="Texture2D" uid="uid://6c8qxeper0ln" path="res://assets/Main Menu/Play Button.png" id="2_ok1bk"]
+[ext_resource type="Script" path="res://scenes/PlayButton.gd" id="3_x8oj3"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7uqeh"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu(1)" type="Sprite2D" parent="."]
+position = Vector2(575.25, 327.25)
+scale = Vector2(0.556223, 0.550127)
+texture = ExtResource("1_cmtfv")
+
+[node name="Button" type="Button" parent="."]
+material = SubResource("CanvasItemMaterial_7uqeh")
+layout_mode = 0
+offset_left = 426.0
+offset_top = 331.0
+offset_right = 729.0
+offset_bottom = 453.0
+flat = true
+script = ExtResource("2_26q0r")
+
+[node name="PlayButton" type="Sprite2D" parent="Button"]
+position = Vector2(149, 58)
+scale = Vector2(0.554945, 0.563596)
+texture = ExtResource("2_ok1bk")
+script = ExtResource("3_x8oj3")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
