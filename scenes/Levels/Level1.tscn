@@ -1755,6 +1755,7 @@ position = Vector2(429, 489)
 scale = Vector2(0.57, 0.57)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="Enemy" parent="." instance=ExtResource("8_kb71q")]
